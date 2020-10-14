@@ -53,9 +53,9 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.0
       with:
+        name: ${{ matrix.os }}
         path: |
           ${{runner.workspace}}/build/*.so
           ${{runner.workspace}}/build/*.dylib
-          ${{runner.workspace}}/build/*.dll
-          ${{runner.workspace}}/build/*.lib
+          ${{runner.workspace}}/build/Release/*.dll
 
